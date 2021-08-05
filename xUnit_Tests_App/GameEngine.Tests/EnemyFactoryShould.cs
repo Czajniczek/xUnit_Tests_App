@@ -83,6 +83,9 @@ namespace GameEngine.Tests
             //Enemy enemy2 = enemy1;
             //Assert.Same(enemy1, enemy2);
         }
+        #endregion
+
+        #region Asserting That Code Throws the Correct Exceptions
 
         #endregion
     }
