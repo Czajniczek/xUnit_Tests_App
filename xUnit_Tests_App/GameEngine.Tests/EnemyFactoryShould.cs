@@ -65,5 +65,25 @@ namespace GameEngine.Tests
             Assert.IsAssignableFrom<Enemy>(enemy); //Uwzględnia dziedziczenie
         }
         #endregion
+
+        #region Asserting on Object Instances
+        [Fact]
+        public void CreateSeparateInstances()
+        {
+            EnemyFactory sut = new EnemyFactory();
+
+            Enemy enemy1 = sut.Create("Zombie");
+            Enemy enemy2 = sut.Create("Zombie");
+
+            // Sprawdzenie czy dwa obiekty nie są tym samym wystąpieniem (czy nie jest to ten sam wróg)
+            Assert.NotSame(enemy1, enemy2);
+
+            //// Sprawdzenie czy dwa obiekty są tym samym wystąpieniem (czy jest to ten sam wróg)
+            //Enemy enemy1 = sut.Create("Zombie");
+            //Enemy enemy2 = enemy1;
+            //Assert.Same(enemy1, enemy2);
+        }
+
+        #endregion
     }
 }
