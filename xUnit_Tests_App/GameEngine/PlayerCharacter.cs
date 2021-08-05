@@ -90,6 +90,8 @@ namespace GameEngine
                 "Long Bow",
                 "Short Bow",
                 "Short Sword",
+                //"Staff Of Wonder",
+                //" "
             };
         }
 
