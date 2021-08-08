@@ -11,6 +11,7 @@ namespace GameEngine.Tests
     {
         #region Asserting on Floating Point Values
         [Fact]
+        [Trait("Category", "Boss")]
         public void HaveCorrectPower()
         {
             BossEnemy sut = new BossEnemy();

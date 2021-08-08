@@ -7,10 +7,12 @@ using Xunit;
 
 namespace GameEngine.Tests
 {
+    [Trait("Category", "Enemy")]
     public class EnemyFactoryShould
     {
         #region Making Asserts Against Object Types
         [Fact]
+        //[Trait("Category", "Enemy")]
         public void CreateNormalEnemyByDefault()
         {
             EnemyFactory sut = new EnemyFactory();
