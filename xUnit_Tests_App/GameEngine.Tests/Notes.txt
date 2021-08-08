@@ -1,0 +1,57 @@
+﻿Zalety pisania testów automatycznych:
+• Mogą być uruchamiane tak często, jak jest to wymagane (bez dodatkowych kosztów)
+• Mogą być uruchamiane w dowolnym czasie, na żądanie lub według harmonogramu
+• Są szybsze niż testowanie ręczne
+• Dzięki nim znajdowanie błędów jest znacznie szybsze
+• Mają wysoką niezawodność
+• Kod testowy znajduje się razem z kodem produkcyjnym
+• Zespoły programistów są szczęśliwsze
+
+Test składa się z 3 logicznych faz (AAA):
+1. Arrange - Konfigurowanie rzeczy do testu (tworzenie instancji obiektów/tworzenie danych testowych i ich konfiguracja)
+2. Act - Wykonanie kodu w celu uzyskania wyników (wywoływanie metod/ustawianie właściwości)
+3. Assert - Sprawdzanie wyników wykonania poprzedniej fazy (Act)
+
+System under test (SUT)
+The "system under test". It is short for "whatever thing we are testing" and is always defined from the perspective 
+of the test. When we are writing unit tests the system under test (SUT) is whatever class (a.k.a. CUT), object 
+(a.k.a. OUT) or method(s) (a.k.a. MUT) we are testing; when we are writing customer tests, the SUT is probably the 
+entire application (a.k.a. AUT) or at least a major subsystem of it. The parts of the application that we are not 
+verifying in this particular test may still be involved as a depended-on component (DOC).
+
+========================================================================================================================
+
+Asserts - oceniają i weryfikują wynik testu na podstawie zwróconego wyniku, stanu końcowego obiektu lub wystąpienia 
+zdarzeń zaobserwowanych podczas wykonywania
+
+Boolean:
+• Prawda/Fałsz
+
+String:
+• Takie same / Różne
+• Pusty
+• Zaczyna się / Kończy się określonym ciągiem
+• Zawiera oczekiwany podciąg
+• Pasuje do wyrażenia regularnego
+
+Wartości liczbowe:
+• Równe / Różne
+• Czy znajduje się w podanym zakresie
+• Precyzja (liczba miejsc po przecinku)
+
+Kolekcje:
+• Zawartość kolekcji jest równa oczekiwanej kolekcji
+• Czy kolekcja zawiera / nie zawiera określonego elementu
+• Czy kolekcja zawiera element, który spełnia określony predykat
+• Czy wszystkie wartość w kolekcji spełniają określone założenia
+
+Obiekty:
+• Jest / nie jest dokładnie określonym typem
+• Jest / nie jest typem lub typem pochodnym
+
+Ile twierdzeń powinno być w metodzie?
+• Zawsze jedno
+• Więcej niż jedno, o ile testują to samo zachowanie
+
+========================================================================================================================
+

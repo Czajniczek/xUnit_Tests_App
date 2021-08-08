@@ -15,6 +15,7 @@ namespace GameEngine.Tests
         {
             BossEnemy sut = new BossEnemy();
 
+            // 1000÷6 = ~166.666666667
             Assert.Equal(166.667, sut.TotalSpecialAttackPower, 3);
         }
         #endregion

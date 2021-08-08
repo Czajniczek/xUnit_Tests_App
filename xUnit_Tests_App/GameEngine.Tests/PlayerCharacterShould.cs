@@ -6,13 +6,13 @@ namespace GameEngine.Tests
     public class PlayerCharacterShould
     {
         #region Adding an Assert to the First Test
-        // Postaæ gracza powinna nie mieæ doœwiadczenia, gdy jest tworzona
         [Fact]
         public void BeInexperiencedWhenNew()
         {
             PlayerCharacter sut = new PlayerCharacter();
 
             Assert.True(sut.IsNoob);
+            //Assert.False(sut.IsNoob);
         }
         #endregion
 
@@ -26,6 +26,17 @@ namespace GameEngine.Tests
             sut.LastName = "Smith";
 
             Assert.Equal("Sarah Smith", sut.FullName);
+            //Assert.NotEqual("Sarah Smith", sut.FullName);
+        }
+
+        [Fact]
+        public void HaveEmptytNickname()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            sut.Nickname = "";
+
+            Assert.Empty(sut.Nickname);
         }
 
         [Fact]
@@ -80,7 +91,7 @@ namespace GameEngine.Tests
             sut.FirstName = "Sarah";
             sut.LastName = "Smith";
 
-            // Pierwsza du¿a litera imienia i pierwsza du¿a litera nazwiska
+            // Pierwsza du¿a litera imienia i pierwsza du¿a litera nazwiska (wyra¿enie regularne)
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", sut.FullName);
         }
         #endregion
@@ -120,8 +131,8 @@ namespace GameEngine.Tests
         {
             PlayerCharacter sut = new PlayerCharacter();
 
-            //Assert.NotNull(sut.Nickname);
             Assert.Null(sut.Nickname);
+            //Assert.NotNull(sut.Nickname);
         }
         #endregion
 
@@ -147,6 +158,7 @@ namespace GameEngine.Tests
         {
             PlayerCharacter sut = new PlayerCharacter();
 
+            // Sprawdzenie, czy lista broni ma przynajmniej jeden rodzaj miecza
             Assert.Contains(sut.Weapons, weapon => weapon.Contains("Sword"));
         }
 
@@ -191,6 +203,7 @@ namespace GameEngine.Tests
         {
             PlayerCharacter sut = new PlayerCharacter();
 
+            // Klasa (PlayerCharacter) musi dziedziczyæ po "INotifyPropertyChanged"
             Assert.PropertyChanged(sut, "Health", () => sut.TakeDamage(10));
         }
         #endregion
