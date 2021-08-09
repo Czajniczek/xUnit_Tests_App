@@ -3,5 +3,5 @@
 namespace GameEngine.Tests
 {
     [CollectionDefinition("GameState collection")]
-    public class GameStateCollection : ICollectionFixture<GameStateFixture> {}
+    public class GameStateCollection : ICollectionFixture<GameStateFixture> { }
 }
