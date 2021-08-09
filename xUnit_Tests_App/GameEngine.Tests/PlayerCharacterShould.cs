@@ -355,13 +355,14 @@ namespace GameEngine.Tests
         //}
         #endregion
 
-        #region Refactoring to Data-driven Tests
+        #region Refactoring to Data-driven Tests && Sharing Test Data Across Tests && Getting Test Data from External Sources
         [Theory]
         //[InlineData(0, 100)]
         //[InlineData(1, 99)]
         //[InlineData(50, 50)]
         //[InlineData(101, 1)]
-        [MemberData(nameof(InternalHealthDamageTestData.TestData), MemberType = typeof(InternalHealthDamageTestData))]
+        //[MemberData(nameof(InternalHealthDamageTestData.TestData), MemberType = typeof(InternalHealthDamageTestData))]
+        [MemberData(nameof(ExternalHealthDamageTestData.TestData), MemberType = typeof(ExternalHealthDamageTestData))]
         public void TakeDamage(int damage, int expectedHealth)
         {
             _sut.TakeDamage(damage);
